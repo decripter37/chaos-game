@@ -2,7 +2,7 @@
 (require :opticl)
 
 ;;; Raggio cerchio contenuto nella finestra
-(defparameter *radius* 200)
+(defparameter *radius* 1000)
 ;;; Larghezza finestra
 (defparameter *w* (+ 1 *radius*))
 ;;; Altezza finestra
@@ -14,7 +14,7 @@
 ;;; Distanza taglio (ex: 2 => taglio a 1/2)
 (defparameter *cut* 2)
 ;;; Numero cicli
-(defparameter *cycles* 100000)
+(defparameter *cycles* 1000000)
 ;;; Raggio cerchio contenente il frattale
 (defparameter *r* *radius* "")
 ;;; Angolo degli attrattori
@@ -92,9 +92,7 @@
                     (setf (opticl:pixel image
                                  (first (centerize p))
                                  (second (centerize p)))
-                          ;(values 255 255 255)
-                          (h-to-rgb-values (* (float (/ m *n*)) 6))
-                    ))
+                          (h-to-rgb-values (* (float (/ m *n*)) 6))))
                 (setf *starting-point* p)))))
 
 ;;; Disegna il frattale, ma rendi impossibile scegliere di nuovo il punto appena scelto
@@ -107,7 +105,7 @@
                         (setf (opticl:pixel image
                                      (first (centerize p))
                                      (second (centerize p)))
-                              (values 255 255 255)))
+                              (h-to-rgb-values (* (float (/ m *n*)) 6))))
                     (setf *last-point* point)
                     (setf *starting-point* p))))))
 
