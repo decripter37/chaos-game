@@ -2,7 +2,7 @@
 (require :opticl)
 
 ;;; Raggio cerchio contenuto nella finestra
-(defparameter *radius* 1000)
+(defparameter *radius* 3000)
 ;;; Larghezza finestra
 (defparameter *w* (+ 1 *radius*))
 ;;; Altezza finestra
@@ -14,9 +14,9 @@
 ;;; Distanza taglio (ex: 2 => taglio a 1/2)
 (defparameter *cut* 2)
 ;;; Numero cicli
-(defparameter *cycles* 1000000)
+(defparameter *cycles* 100000000)
 ;;; Raggio cerchio contenente il frattale
-(defparameter *r* *radius* "")
+(defparameter *r* *radius*)
 ;;; Angolo degli attrattori
 (defparameter *angle* (/ (* 2 PI) *n*))
 ;;; Attrattori
